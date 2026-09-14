@@ -5,7 +5,7 @@ OpenCode / OpenChamber at it, exposing **400+ models from many providers**
 behind a single OpenAI-compatible endpoint.
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/USER/REPO/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/Potowai/omniroute-quickstart/main/install.sh | bash
 ```
 
 ## What you get
