@@ -1,8 +1,8 @@
-# OmniRoute × OpenChamber × OpenCode — Fast Start
+# OmniRoute × OpenCode — Fast Start
 
-One command to stand up a multi-provider AI gateway (OmniRoute) and point
-OpenCode / OpenChamber at it, exposing **400+ models from many providers**
-behind a single OpenAI-compatible endpoint.
+Stand up a multi-provider AI gateway (OmniRoute) and point OpenCode at it,
+exposing **700+ models from many providers** behind a single
+OpenAI-compatible endpoint.
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/Potowai/omniroute-quickstart/main/install.sh | bash
@@ -10,13 +10,12 @@ curl -fsSL https://raw.githubusercontent.com/Potowai/omniroute-quickstart/main/i
 
 ## What you get
 
-| Component    | Role                                                                |
-| ------------ | ------------------------------------------------------------------- |
-| **OmniRoute** | Local LLM gateway/router — one endpoint, many upstream providers    |
-| **OpenCode**  | Terminal AI coding agent                                             |
-| **OpenChamber** | Session-orchestrated agent runner that drives OpenCode            |
+| Component   | Role                                                          |
+| ----------- | ------------------------------------------------------------- |
+| **OmniRoute** | Local LLM gateway/router — one endpoint, many upstream providers |
+| **OpenCode**  | Terminal AI coding agent                                     |
 
-All three talk to each other through one local OpenAI-compatible API:
+Everything talks through one local OpenAI-compatible API:
 `http://localhost:20128/v1`.
 
 ## Quick start
@@ -62,8 +61,11 @@ omniroute autostart status
 
 ```
 .
-├── install.sh        # one-shot install of all three
+├── install.sh        # one-shot install of the stack
 ├── opencode.json     # example provider block (openai-compatible)
+├── docs/
+│   ├── openchamber.md   # web UI over OpenCode (advanced)
+│   └── tailscale.md     # private remote access (advanced)
 └── README.md
 ```
 
@@ -75,3 +77,12 @@ omniroute providers test-all    # verify connectivity
 omniroute setup-opencode        # regenerate opencode model list
 opencode models | grep omniroute
 ```
+
+## Advanced: OpenChamber + Tailscale
+
+OpenChamber is a web UI over OpenCode, and Tailscale gives you a private,
+encrypted network between your devices so you can use the UIs from a phone or
+laptop. These are optional and covered in:
+
+- [`docs/openchamber.md`](docs/openchamber.md)
+- [`docs/tailscale.md`](docs/tailscale.md)
